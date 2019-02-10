@@ -32,21 +32,25 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
                 scores[activePlayer] = 0;
                 document.querySelector('#score-' + activePlayer).textContent = '0';
                 nextPlayer();
+                console.log(dice);
             } else if(dice !== 1) {
                 //Add score
                 roundScore += dice;
                 document.querySelector('#current-' + activePlayer).textContent = roundScore;
+                console.log(dice);
                 
             } else {
                 nextPlayer();
-
+                console.log(dice)
             }
             prevRoll = dice;
         }
 });
    
 
+
 document.querySelector('.btn-hold').addEventListener('click', function() {
+    
     if(gamePlaying) {
         // Add CURRENT score to GLOBAL score
         scores[activePlayer] += roundScore;
@@ -54,11 +58,12 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
         var input = document.querySelector('.score-input').value;
         var winningScore = input;
         //Undefined, 0, null of "" are COERCED to false
-        if(input && input === Number) {
-            winningScore = input;
-
-        } else {
+        if(isNaN(input)) {
             winningScore = 100;
+        } 
+        
+        else {
+            winningScore = input;
         }
         // Update the UI 
         document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
