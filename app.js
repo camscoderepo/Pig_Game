@@ -58,7 +58,7 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
         var input = document.querySelector('.score-input').value;
         var winningScore = input;
         //Undefined, 0, null of "" are COERCED to false
-        if(isNaN(input) || input.value == null) {
+        if(isNaN(input) || input === '') {
             winningScore = 100;
         } 
         
