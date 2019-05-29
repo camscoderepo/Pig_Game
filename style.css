@@ -106,7 +106,7 @@ body {
 }
 
 .player-current-box {
-    background-color: #ff6cdf;
+    background-color: #6c85ff;
     color: rgb(0, 0, 0);
     width: 40%;
     margin: 0 auto;
@@ -149,7 +149,7 @@ button:focus {
 }
 
 i {
-    color: #ff6cdf;
+    color: #6c85ff;
     display: inline-block;
     margin-right: 15px;
     font-size: 32px;
